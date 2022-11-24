@@ -1,18 +1,17 @@
-"use client";
+import { Configuration, OpenAIApi } from 'openai'
+import { useState } from 'react'
+import AiNFT from './AiNFT'
 
-import { useState } from "react";
-import { Configuration, OpenAIApi } from "openai";
 
-import AiNFT from "./AiNFT"
-
-const OPENAI = process.env.OPENAI
-
-export default function Home() {
+function App() {
   const [open, setOpen] = useState(false)
   const [input, setInput] = useState("")
   const [loading, setLoading] = useState(false)
   const [showImage, setShowImage] = useState(false)
   const [image, setImage] = useState("")
+
+  const OPENAI = import.meta.env.VITE_OPENAI;
+
   async function createImage() {
     setOpen(!open)
     setLoading(true)
@@ -77,3 +76,5 @@ export default function Home() {
     </>
   )
 }
+
+export default App
