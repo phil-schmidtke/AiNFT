@@ -5,7 +5,7 @@ import { Configuration, OpenAIApi } from "openai";
 
 import AiNFT from "./AiNFT"
 
-const OPENAPI = process.env.OPENAI
+const OPENAI = process.env.OPENAI
 
 export default function Home() {
   const [open, setOpen] = useState(false)
@@ -17,7 +17,7 @@ export default function Home() {
     setOpen(!open)
     setLoading(true)
     const configuration = new Configuration({
-      apiKey: OPENAPI,
+      apiKey: OPENAI,
     });
     const openai = new OpenAIApi(configuration);
     const response = await openai.createImage({
